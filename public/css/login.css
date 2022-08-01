@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  background-image: url(https://th.bing.com/th/id/R.25dc64a69b4774619cef90f7148951b4?rik=ULkHhlwtv3pHrg&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fwp1854304.png&ehk=NxjQCsKvR%2fEzSHawMsJIgefP9e3DRraT9%2fEK89XiY3w%3d&risl=&pid=ImgRaw&r=0);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  flex-direction: column;
+}
+
+.box {
+  width: 350px;
+  height: 460px;
+  font-size: 16px;
+  padding: 40px 40px;
+  background: #0F044C;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 30px;
+}
+
+.user {
+  margin-top: 50px;
+}
+
+.fas {
+  position: absolute;
+}
+
+input {
+  width: 90%;
+  margin-bottom: 25px;
+  padding: 0px 30px 15px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #141E75;
+  outline: none;
+  background-color: #0F044C;
+  color: #fff;
+}
+
+input:focus {
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.reset-password {
+  color: #ff7f50;
+  text-align: right;
+  margin-top: 0px;
+  font-size: 12px;
+}
+
+.login-btn {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn {
+  display: block;
+  width: 80%;
+  padding: 15px;
+  background-color: #EEEEEE;
+  color: #0F044C;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.8;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.signup span {
+  color: #7fb8e6;
+}
+
+.signup span:hover {
+  color: #3793df;
+}
+
+.alert-danger {
+  background-color: red;
+  padding: .7em;
+  margin-top: 0.5em;
+}
+
+ul li,
+.text-danger {
+  color: red;
+}
+
+.alert-success {
+  background-color: green;
+  text-align: center;
+}
+
+form {
+  margin-top: 5em;
+}
+
+@media screen and (max-width:400px) {
+  body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box {
+    width: 176px;
+    height: auto;
+    font-size: .6em !important;
+  }
+
+  button {
+    font-size: 1em !important;
+  }
+}
+
+
+
+
+/* <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4" style="margin-top: 20px;">
+                <h4>Register</h4>
+                <hr>
+                <form action="{{ route('register-user') }}" method="POST">
+                    @if (Session::has('success'))
+                        <div class="alert alert-success">
+                            {{ Session::get('success') }}
+                        </div>
+                    @endif
+                    @if (Session::has('fail'))
+                        <div class="alert alert-danger">
+                            {{ Session::get('fail') }}
+                        </div>
+                    @endif
+                    @csrf
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Enter full Name..." name="name"
+                            value="{{ old('name') }}">
+                        <span class="text-danger">
+                            @error('name')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" placeholder="Enter Email..." name="email"
+                            value="{{ old('email') }}">
+                        <span class="text-danger">
+                            @error('email')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password..." name="password"
+                            value="">
+                        <span class="text-danger">
+                            @error('password')
+                                {{ $message }}
+                            @enderror
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <button style="margin-top: 1em;" class="btn btn-block btn-primary"
+                            type="submit">Register</button>
+                    </div>
+                    <a href="/login">Already registered? Login here</a>
+                </form>
+            </div>
+        </div>
+    </div> */

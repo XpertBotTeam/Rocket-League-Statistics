@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  animation: animatebg 10s linear infinite;
+}
+
+@keyframes animatebg {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+section .loader {
+  position: relative;
+  width: 70px;
+  height: 45px;
+}
+
+section .loader span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(calc(18deg * var(--i)));
+}
+
+section .loader span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background: #00ff0a;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff0a,
+    0 0 20px #00ff0a,
+    0 0 40px #00ff0a,
+    0 0 60px #00ff0a,
+    0 0 80px #00ff0a,
+    0 0 100px #00ff0a;
+  animation: animate 2s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+
+  50%,
+  100% {
+    transform: scale(0);
+  }
+}
+
+
+
+@keyframes progress {
+  0% {
+    --percentage: 0;
+  }
+
+  100% {
+    --percentage: var(--value);
+  }
+}
+
+@property --percentage {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+[role="progressbar"] {
+  --percentage: var(--value);
+  --primary: #369;
+  --secondary: #adf;
+  --size: 100px;
+  animation: progress 2s 0.5s forwards;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+[role="progressbar"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(var(--primary) calc(var(--percentage) * 1%), var(--secondary) 0);
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 55%, #000 0);
+  -webkit-mask-mode: alpha;
+}
+
+[role="progressbar"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--primary);
+}
+
+
+#youtube {
+  z-index: 2;
+  display: block;
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: red;
+  border-radius: 50% / 11%;
+  transition: transform 0.5s;
+}
+
+#youtube:hover,
+#youtube:focus {
+  transform: scale(1.1);
+}
+
+#youtube::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7.5%;
+  left: -6%;
+  width: 112%;
+  height: 85%;
+  background: red;
+  border-radius: 9% / 50%;
+}
+
+#youtube::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  width: 45px;
+  height: 30px;
+  border: 15px solid transparent;
+  box-sizing: border-box;
+  border-left: 30px solid white;
+}
+
+#youtube span {
+  font-size: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Mochiy Pop One', sans-serif !important;
+  font-size: .9em !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.git-logo {
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+/* Social Media Icons */
+.fb {
+  padding: 5px 0px 0px 20px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.ld {
+  color: rgb(255, 255, 255);
+  padding: 5px 0px 0px 20px;
+  font-weight: bold;
+}
+
+.ig {
+  color: rgb(255, 255, 255);
+  padding: 5px 0px 0px 20px;
+  font-weight: bold;
+}
+
+.fb:hover,
+.ig:hover,
+.ld:hover,
+.git-logo:hover {
+  color: rgb(59, 59, 59);
+}
+
+a {
+  color: white !important;
+}
+
+
+.gg-log-out {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 6px;
+  height: 16px;
+  border: 2px solid;
+  transform: scale(var(--ggs, 1));
+  border-right: 0;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  margin-left: -10px
+}
+
+.gg-log-out::after,
+.gg-log-out::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute
+}
+
+.gg-log-out::after {
+  border-top: 2px solid;
+  border-left: 2px solid;
+  transform: rotate(-45deg);
+  width: 8px;
+  height: 8px;
+  left: 4px;
+  bottom: 2px
+}
+
+.gg-log-out::before {
+  border-radius: 3px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+  left: 5px;
+  bottom: 5px
+}
+
+.gg-log-out {
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.gg-log-out:hover {
+  opacity: 0.5;
+}
+
+
+nav {
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  background-image: url(https://rltracker.pro/assets/rl_bg-e3c24a0ae6f6df8c56fbaf0509d4ffd1f7681364cef04adf85391d018520c93d.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 2em;
+
+}
+
+
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rl-logo {
+  width: 17em;
+  height: auto;
+}
+
+.no-profile-logo {
+  width: 4em;
+  height: auto;
+  margin-right: 1em;
+}
+
+.user-name {
+  font-size: 1.3em;
+}
+
+.socials {
+  place-content: center;
+  display: flex;
+  margin-bottom: 2.5em;
+}
+
+.stats-search {
+  background-image: url(https://rlstats.net/images/background.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5em;
+}
+
+form {
+  background: #fff;
+  width: 600px;
+  height: 55px;
+  display: flex;
+}
+
+
+form input {
+  flex: 1;
+  border: none;
+  outline: none;
+}
+
+form button {
+  background-color: blue;
+  padding: 10px 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+
+form .fa-search {
+  align-self: center;
+  padding: 10px 20px;
+  color: #777;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: row;
+}
+
+.stats h1 {
+  margin-right: 1em;
+
+}
+
+
+.stats img {
+  width: 8em;
+  height: auto;
+}
+
+.temp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.stat-container span {
+  background-color: blue;
+}
+
+.hidden {
+  display: none;
+}
+
+.season-reward-levels {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  color: white;
+}
+
+.season-reward-levels img {
+  width: 8em;
+  height: auto;
+  margin-right: 3em;
+}
+
+.season-reward-levels .reward-msg {
+  margin-left: 1em;
+}
+
+.ranks-grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+
+}
+
+.grid-item {
+  background-color: rgb(82, 66, 66);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.grid-item img {
+  width: 14em;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width:400px) {
+  body {
+    font-size: .6em !important;
+  }
+
+  .rl-logo {
+    width: 15em;
+    height: auto;
+  }
+
+  .no-profile-logo {
+    width: 3em;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+
+
+
+  .temp-container {
+    flex-direction: column;
+  }
+
+  .container {
+    margin-top: 5em;
+    font-size: .8em;
+  }
+}
