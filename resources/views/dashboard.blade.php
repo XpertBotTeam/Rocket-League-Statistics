@@ -52,6 +52,7 @@
                 </button>
             </form>
         </div>
+
         @if (Session::has('data'))
             <div class="stats">
                 <div>
@@ -62,64 +63,66 @@
                     <div class="stat-container">
                         <img src="{{ asset('images/wins.png') }}" alt="">
                         @if (Session::has('wval'))
-                            @php
-                                $value = Session::get('wval');
-                            @endphp
-                            <span>{{ $value }} Wins</span>
+                            <span>{{ Session::get('wval') }} Wins</span>
+                        @else
+                            <a href="{{ route('showWins') }}">
+                                <button>SHOW</button>
+                            </a>
                         @endif
-                        <a href="{{ route('showWins') }}">
-                            <button>SHOW</button>
-                        </a>
                     </div>
                     <div class="stat-container">
                         <img src="{{ asset('images/mvps.png') }}" alt="">
                         @if (Session::has('mval'))
-                            <span>{{ Session::get('mval') }} MVPS</span>
+                            <span>{{ Session::get('mval') }} Wins</span>
+                        @else
+                            <a href="{{ route('showMVPS') }}">
+                                <button>SHOW</button>
+                            </a>
                         @endif
-                        <a href="{{ route('showMVPS') }}">
-                            <button>SHOW</button>
-                        </a>
                     </div>
                     <div class="stat-container">
                         <img src="{{ asset('images/goals.png') }}" alt="">
                         @if (Session::has('gval'))
-                            <span>{{ Session::get('gval') }} Goals</span>
+                            <span>{{ Session::get('gval') }} Wins</span>
+                        @else
+                            <a href="{{ route('showGoals') }}">
+                                <button>SHOW</button>
+                            </a>
                         @endif
-                        <a href="{{ route('showGoals') }}">
-                            <button>SHOW</button>
-                        </a>
                     </div>
                     <div class="stat-container">
                         <img src="{{ asset('images/assists.png') }}" alt="">
-                        @if (Session::has('aval'))
-                            <span>{{ Session::get('aval') }} Assists</span>
+                        @if (Session::has('assistsval'))
+                            <span>{{ Session::get('assistsval') }} Assists</span>
+                        @else
+                            <a href="{{ route('showAssists') }}">
+                                <button>SHOW</button>
+                            </a>
                         @endif
-                        <a href="{{ route('showAssists') }}">
-                            <button>SHOW</button>
-                        </a>
                     </div>
                     <div class="stat-container">
                         <img src="{{ asset('images/saves.png') }}" alt="">
-                        @if (Session::has('sval'))
-                            <span>{{ Session::get('sval') }} Saves</span>
+                        @if (Session::has('savesval'))
+                            <span>{{ Session::get('savesval') }} Saves</span>
+                        @else
+                            <a href="{{ route('showSaves') }}">
+                                <button>SHOW</button>
+                            </a>
                         @endif
-                        <a href="{{ route('showSaves') }}">
-                            <button>SHOW</button>
-                        </a>
                     </div>
                     <div class="stat-container">
                         <img src="{{ asset('images/shots.png') }}" alt="">
-                        @if (Session::has('shval'))
-                            <span>{{ Session::get('shval') }} Shots</span>
+                        @if (Session::has('shotsval'))
+                            <span>{{ Session::get('shotsval') }} Shots</span>
+                        @else
+                            <a href="{{ route('showShots') }}">
+                                <button>SHOW</button>
+                            </a>
                         @endif
-                        <a href="{{ route('showShots') }}">
-                            <button>SHOW</button>
-                        </a>
                     </div>
                 </div>
 
             </div>
-
             @php
                 $ranks = Session::get('data')[0];
                 $rewards = Session::get('data')[1];

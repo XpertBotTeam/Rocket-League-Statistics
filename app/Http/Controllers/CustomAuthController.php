@@ -32,7 +32,7 @@ class CustomAuthController extends Controller
         $user->password = Hash::make($request->password);
         $saved = $user->save();
         if ($saved)
-            return back()->with('success', 'Registeration Completed! You can Sign in now');
+            return redirect('login');
         return back()->with('fail', 'Something Went Wrong!');
     }
     public function loginUser(Request $request)
@@ -94,7 +94,8 @@ class CustomAuthController extends Controller
         ])->get("https://rocket-league1.p.rapidapi.com/stat/{$playerID}/wins");
         $winsVal = $wins->json();
         $winsVal = $winsVal['value'];
-        return back()->with('wval', $winsVal);
+        Session::put('wval', $winsVal);
+        return back();
     }
     //YOU MUST SETUP DIFFERENT VALUES WHEN REDIRECTING BACK TO THE VIEW OR ALL OF THE VALUES WILL BE THE SAME
     public function showMVPS()
@@ -106,7 +107,8 @@ class CustomAuthController extends Controller
         ])->get("https://rocket-league1.p.rapidapi.com/stat/{$playerID}/mvps");
         $mvpsVal = $mvps->json();
         $mvpsVal = $mvpsVal['value'];
-        return back()->with('mval', $mvpsVal);
+        Session::put('mval', $mvpsVal);
+        return back();
     }
 
     public function showGoals()
@@ -118,7 +120,8 @@ class CustomAuthController extends Controller
         ])->get("https://rocket-league1.p.rapidapi.com/stat/{$playerID}/goals");
         $goalsVal = $goals->json();
         $goalsVal = $goalsVal['value'];
-        return back()->with('gval', $goalsVal);
+        Session::put('gval', $goalsVal);
+        return back();
     }
 
     public function showSaves()
@@ -130,7 +133,8 @@ class CustomAuthController extends Controller
         ])->get("https://rocket-league1.p.rapidapi.com/stat/{$playerID}/saves");
         $savesVal = $saves->json();
         $savesVal = $savesVal['value'];
-        return back()->with('sval', $savesVal);
+        Session::put('savesval', $savesVal);
+        return back();
     }
 
     public function showAssists()
@@ -142,7 +146,8 @@ class CustomAuthController extends Controller
         ])->get("https://rocket-league1.p.rapidapi.com/stat/{$playerID}/assists");
         $assistsVal = $assists->json();
         $assistsVal = $assistsVal['value'];
-        return back()->with('aval', $assistsVal);
+        Session::put('assistsval', $assistsVal);
+        return back();
     }
 
     public function showShots()
@@ -154,6 +159,7 @@ class CustomAuthController extends Controller
         ])->get("https://rocket-league1.p.rapidapi.com/stat/{$playerID}/shots");
         $shotsVal = $shots->json();
         $shotsVal = $shotsVal['value'];
-        return back()->with('shval', $shotsVal);
+        Session::put('shotsval', $shotsVal);
+        return back();
     }
 }
