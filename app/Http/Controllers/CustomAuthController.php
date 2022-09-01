@@ -77,12 +77,11 @@ class CustomAuthController extends Controller
             'X-RapidAPI-Key' => '4018dc4802msh79cdf4f3320d20ep19042ejsnfa92b6f34fd1'
         ])->get("https://rocket-league1.p.rapidapi.com/ranks/{$playerID}");
         $ranksArray = $ranks->json();
-        dd($ranksArray);
         $ranks = $ranksArray['ranks'];
         $reward = $ranksArray['reward'];
-
         $data = [$ranks, $reward];
-        return back()->with('data', $data);
+        Session::put('data', $data);
+        return back();
     }
 
     public function showWins()

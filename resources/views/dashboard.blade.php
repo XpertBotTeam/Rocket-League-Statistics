@@ -150,6 +150,10 @@
                     <img src="{{ asset('images/ranks/silver-season.png') }}" alt="">
                 @elseif ($rewards['level'] == 'Champion')
                     <img src="{{ asset('images/ranks/champ1.png') }}" alt="">
+                @elseif ($rewards['level'] == 'Diamond')
+                    <img src="https://rlstats.net/images/ranks/s17rl5.png" alt="">
+                @elseif ($rewards['level'] == 'Supersonic Legend')
+                    <img src="https://rlstats.net/images/ranks/s17rl8.png" alt="">
                 @else
                     <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
                 @endif
@@ -164,57 +168,324 @@
             <div class="ranks-grid">
                 <div class="grid-item">
                     <h6>1v1 Solo Duel</h6>
-                    <h6>{{ $rank_1s['rank'] }} {{ $rank_1s['division'] }}</h6>
+                    <h6>{{ $rank_1s['rank'] }}</h6>
                     <h6>MMR: {{ $rank_1s['mmr'] }}</h6>
-                    <img src="{{ asset('images/ranks/champ1.png') }}" alt="">
+                    @if ($rank_1s['rank'] == 'Bronze I')
+                        <img src="{{ asset('images/ranks/Bronze1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Bronze II')
+                        <img src="{{ asset('images/ranks/Bronze2_rank_icon_.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Bronze III')
+                        <img src="{{ asset('images/ranks/Bronze3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Champion I')
+                        <img src="{{ asset('images/ranks/Champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Champion II')
+                        <img src="{{ asset('images/ranks/Champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Champion III')
+                        <img src="{{ asset('images/ranks/Champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Diamond I')
+                        <img src="{{ asset('images/ranks/Diamond1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Diamond II')
+                        <img src="{{ asset('images/ranks/Diamond2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Diamond III')
+                        <img src="{{ asset('images/ranks/Diamond3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Gold I')
+                        <img src="{{ asset('images/ranks/Gold1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Gold II')
+                        <img src="{{ asset('images/ranks/Gold2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Gold III')
+                        <img src="{{ asset('images/ranks/Gold3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Grand Champion I')
+                        <img src="{{ asset('images/ranks/Grand_champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Grand Champion II')
+                        <img src="{{ asset('images/ranks/Grand_champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Grand Champion III')
+                        <img src="{{ asset('images/ranks/Grand_champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Platinum I')
+                        <img src="{{ asset('images/ranks/Platinum1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Platinum II')
+                        <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Platinum III')
+                        <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @else
+                        <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
+                    @endif
                     <h6>Matches Played: {{ $rank_1s['played'] }}</h6>
                     <h6>Streak: {{ $rank_1s['streak'] }}</h6>
                 </div>
                 <div class="grid-item">
                     <h6>2v2 Doubles</h6>
-                    <h6>{{ $rank_2s['rank'] }} {{ $rank_2s['division'] }}</h6>
+                    <h6>{{ $rank_2s['rank'] }}</h6>
                     <h6>MMR: {{ $rank_2s['mmr'] }}</h6>
-                    <img src="{{ asset('images/ranks/champ1.png') }}" alt="">
+                    @if ($rank_1s['rank'] == 'Bronze I')
+                        <img src="{{ asset('images/ranks/Bronze1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Bronze II')
+                        <img src="{{ asset('images/ranks/Bronze2_rank_icon_.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Bronze III')
+                        <img src="{{ asset('images/ranks/Bronze3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Champion I')
+                        <img src="{{ asset('images/ranks/Champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Champion II')
+                        <img src="{{ asset('images/ranks/Champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Champion III')
+                        <img src="{{ asset('images/ranks/Champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Diamond I')
+                        <img src="{{ asset('images/ranks/Diamond1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Diamond II')
+                        <img src="{{ asset('images/ranks/Diamond2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Diamond III')
+                        <img src="{{ asset('images/ranks/Diamond3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Gold I')
+                        <img src="{{ asset('images/ranks/Gold1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Gold II')
+                        <img src="{{ asset('images/ranks/Gold2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Gold III')
+                        <img src="{{ asset('images/ranks/Gold3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Grand Champion I')
+                        <img src="{{ asset('images/ranks/Grand_champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Grand Champion II')
+                        <img src="{{ asset('images/ranks/Grand_champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Grand Champion III')
+                        <img src="{{ asset('images/ranks/Grand_champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Platinum I')
+                        <img src="{{ asset('images/ranks/Platinum1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Platinum II')
+                        <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Platinum III')
+                        <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @else
+                        <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
+                    @endif
                     <h6>Matches Played: {{ $rank_2s['played'] }}</h6>
                     <h6>Streak: {{ $rank_2s['streak'] }}</h6>
                 </div>
                 <div class="grid-item">
                     <h6>3v3 Standard</h6>
-                    <h6>{{ $rank_3s['rank'] }} {{ $rank_3s['division'] }}</h6>
+                    <h6>{{ $rank_3s['rank'] }}</h6>
                     <h6>MMR: {{ $rank_3s['mmr'] }}</h6>
-                    <img src="{{ asset('images/ranks/champ1.png') }}" alt="">
+                    @if ($rank_3s['rank'] == 'Bronze I')
+                        <img src="{{ asset('images/ranks/Bronze1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Bronze II')
+                        <img src="{{ asset('images/ranks/Bronze2_rank_icon_.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Bronze III')
+                        <img src="{{ asset('images/ranks/Bronze3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Champion I')
+                        <img src="{{ asset('images/ranks/Champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Champion II')
+                        <img src="{{ asset('images/ranks/Champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Champion III')
+                        <img src="{{ asset('images/ranks/Champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Diamond I')
+                        <img src="{{ asset('images/ranks/Diamond1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Diamond II')
+                        <img src="{{ asset('images/ranks/Diamond2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Diamond III')
+                        <img src="{{ asset('images/ranks/Diamond3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Gold I')
+                        <img src="{{ asset('images/ranks/Gold1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Gold II')
+                        <img src="{{ asset('images/ranks/Gold2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Gold III')
+                        <img src="{{ asset('images/ranks/Gold3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Grand Champion I')
+                        <img src="{{ asset('images/ranks/Grand_champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Grand Champion II')
+                        <img src="{{ asset('images/ranks/Grand_champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Grand Champion III')
+                        <img src="{{ asset('images/ranks/Grand_champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Platinum I')
+                        <img src="{{ asset('images/ranks/Platinum1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Platinum II')
+                        <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Platinum III')
+                        <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @else
+                        <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
+                    @endif
                     <h6>Matches Played: {{ $rank_3s['played'] }}</h6>
                     <h6>Streak: {{ $rank_3s['streak'] }}</h6>
                 </div>
                 <div class="grid-item">
                     <h6>2v2 Hoops</h6>
-                    <h6>{{ $rank_hoops['rank'] }} {{ $rank_hoops['division'] }}</h6>
+                    <h6>{{ $rank_hoops['rank'] }}</h6>
                     <h6>MMR: {{ $rank_hoops['mmr'] }}</h6>
-                    <img src="{{ asset('images/ranks/champ1.png') }}" alt="">
+                    @if ($rank_hoops['rank'] == 'Bronze I')
+                        <img src="{{ asset('images/ranks/Bronze1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Bronze II')
+                        <img src="{{ asset('images/ranks/Bronze2_rank_icon_.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Bronze III')
+                        <img src="{{ asset('images/ranks/Bronze3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Champion I')
+                        <img src="{{ asset('images/ranks/Champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Champion II')
+                        <img src="{{ asset('images/ranks/Champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Champion III')
+                        <img src="{{ asset('images/ranks/Champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Diamond I')
+                        <img src="{{ asset('images/ranks/Diamond1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Diamond II')
+                        <img src="{{ asset('images/ranks/Diamond2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Diamond III')
+                        <img src="{{ asset('images/ranks/Diamond3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Gold I')
+                        <img src="{{ asset('images/ranks/Gold1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Gold II')
+                        <img src="{{ asset('images/ranks/Gold2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Gold III')
+                        <img src="{{ asset('images/ranks/Gold3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Grand Champion I')
+                        <img src="{{ asset('images/ranks/Grand_champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Grand Champion II')
+                        <img src="{{ asset('images/ranks/Grand_champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Grand Champion III')
+                        <img src="{{ asset('images/ranks/Grand_champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Platinum I')
+                        <img src="{{ asset('images/ranks/Platinum1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Platinum II')
+                        <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Platinum III')
+                        <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @else
+                        <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
+                    @endif
                     <h6>Matches Played: {{ $rank_hoops['played'] }}</h6>
                     <h6>Streak: {{ $rank_hoops['streak'] }}</h6>
                 </div>
                 <div class="grid-item">
                     <h6>3v3 Rumble</h6>
-                    <h6>{{ $rank_rumble['rank'] }} {{ $rank_rumble['division'] }}</h6>
+                    <h6>{{ $rank_rumble['rank'] }}</h6>
                     <h6>MMR: {{ $rank_rumble['mmr'] }}</h6>
-                    <img src="{{ asset('images/ranks/champ1.png') }}" alt="">
+                    @if ($rank_rumble['rank'] == 'Bronze I')
+                        <img src="{{ asset('images/ranks/Bronze1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Bronze II')
+                        <img src="{{ asset('images/ranks/Bronze2_rank_icon_.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Bronze III')
+                        <img src="{{ asset('images/ranks/Bronze3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Champion I')
+                        <img src="{{ asset('images/ranks/Champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Champion II')
+                        <img src="{{ asset('images/ranks/Champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Champion III')
+                        <img src="{{ asset('images/ranks/Champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Diamond I')
+                        <img src="{{ asset('images/ranks/Diamond1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Diamond II')
+                        <img src="{{ asset('images/ranks/Diamond2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Diamond III')
+                        <img src="{{ asset('images/ranks/Diamond3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Gold I')
+                        <img src="{{ asset('images/ranks/Gold1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Gold II')
+                        <img src="{{ asset('images/ranks/Gold2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Gold III')
+                        <img src="{{ asset('images/ranks/Gold3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Grand Champion I')
+                        <img src="{{ asset('images/ranks/Grand_champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Grand Champion II')
+                        <img src="{{ asset('images/ranks/Grand_champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Grand Champion III')
+                        <img src="{{ asset('images/ranks/Grand_champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Platinum I')
+                        <img src="{{ asset('images/ranks/Platinum1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Platinum II')
+                        <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Platinum III')
+                        <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @else
+                        <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
+                    @endif
                     <h6>Matches Played: {{ $rank_rumble['played'] }}</h6>
                     <h6>Streak: {{ $rank_rumble['streak'] }}</h6>
                 </div>
                 <div class="grid-item">
                     <h6>3v3 Dropshot</h6>
-                    <h6>{{ $rank_dropshot['rank'] }} {{ $rank_dropshot['division'] }}</h6>
+                    <h6>{{ $rank_dropshot['rank'] }}</h6>
                     <h6>MMR: {{ $rank_dropshot['mmr'] }}</h6>
-                    <img src="{{ asset('images/ranks/champ1.png') }}" alt="">
+                    @if ($rank_dropshot['rank'] == 'Bronze I')
+                        <img src="{{ asset('images/ranks/Bronze1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Bronze II')
+                        <img src="{{ asset('images/ranks/Bronze2_rank_icon_.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Bronze III')
+                        <img src="{{ asset('images/ranks/Bronze3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Champion I')
+                        <img src="{{ asset('images/ranks/Champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Champion II')
+                        <img src="{{ asset('images/ranks/Champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Champion III')
+                        <img src="{{ asset('images/ranks/Champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Diamond I')
+                        <img src="{{ asset('images/ranks/Diamond1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Diamond II')
+                        <img src="{{ asset('images/ranks/Diamond2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Diamond III')
+                        <img src="{{ asset('images/ranks/Diamond3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Gold I')
+                        <img src="{{ asset('images/ranks/Gold1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Gold II')
+                        <img src="{{ asset('images/ranks/Gold2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Gold III')
+                        <img src="{{ asset('images/ranks/Gold3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Grand Champion I')
+                        <img src="{{ asset('images/ranks/Grand_champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Grand Champion II')
+                        <img src="{{ asset('images/ranks/Grand_champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Grand Champion III')
+                        <img src="{{ asset('images/ranks/Grand_champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Platinum I')
+                        <img src="{{ asset('images/ranks/Platinum1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Platinum II')
+                        <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Platinum III')
+                        <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @else
+                        <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
+                    @endif
                     <h6>Matches Played: {{ $rank_dropshot['played'] }}</h6>
                     <h6>Streak: {{ $rank_dropshot['streak'] }}</h6>
                 </div>
                 <div class="grid-item">
                     <h6>3v3 Snow Day</h6>
-                    <h6>{{ $rank_snowday['rank'] }} {{ $rank_snowday['division'] }}</h6>
+                    <h6>{{ $rank_snowday['rank'] }}</h6>
                     <h6>MMR: {{ $rank_snowday['mmr'] }}</h6>
-                    <img src="{{ asset('images/ranks/champ1.png') }}" alt="">
+                    @if ($rank_snowday['rank'] == 'Bronze I')
+                        <img src="{{ asset('images/ranks/Bronze1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Bronze II')
+                        <img src="{{ asset('images/ranks/Bronze2_rank_icon_.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Bronze III')
+                        <img src="{{ asset('images/ranks/Bronze3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Champion I')
+                        <img src="{{ asset('images/ranks/Champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Champion II')
+                        <img src="{{ asset('images/ranks/Champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Champion III')
+                        <img src="{{ asset('images/ranks/Champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Diamond I')
+                        <img src="{{ asset('images/ranks/Diamond1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Diamond II')
+                        <img src="{{ asset('images/ranks/Diamond2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Diamond III')
+                        <img src="{{ asset('images/ranks/Diamond3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Gold I')
+                        <img src="{{ asset('images/ranks/Gold1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Gold II')
+                        <img src="{{ asset('images/ranks/Gold2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Gold III')
+                        <img src="{{ asset('images/ranks/Gold3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Grand Champion I')
+                        <img src="{{ asset('images/ranks/Grand_champion1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Grand Champion II')
+                        <img src="{{ asset('images/ranks/Grand_champion2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Grand Champion III')
+                        <img src="{{ asset('images/ranks/Grand_champion3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Platinum I')
+                        <img src="{{ asset('images/ranks/Platinum1_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Platinum II')
+                        <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Platinum III')
+                        <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @else
+                        <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
+                    @endif
+
                     <h6>Matches Played: {{ $rank_snowday['played'] }}</h6>
                     <h6>Streak: {{ $rank_snowday['streak'] }}</h6>
                 </div>
@@ -246,11 +517,6 @@
                 <span style="--i:20;"></span>
             </div>
         </section>
-    </div>
-
-
-
-
 
 
     <script>
