@@ -206,6 +206,8 @@
                         <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
                     @elseif ($rank_1s['rank'] == 'Platinum III')
                         <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_1s['rank'] == 'Supersonic Legend')
+                        <img src="{{ asset('images/ranks/Supersonic_Legend_rank_icon.webp') }}" alt="">
                     @else
                         <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
                     @endif
@@ -252,6 +254,8 @@
                         <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
                     @elseif ($rank_2s['rank'] == 'Platinum III')
                         <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_2s['rank'] == 'Supersonic Legend')
+                        <img src="{{ asset('images/ranks/Supersonic_Legend_rank_icon.webp') }}" alt="">
                     @else
                         <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
                     @endif
@@ -298,6 +302,8 @@
                         <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
                     @elseif ($rank_3s['rank'] == 'Platinum III')
                         <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_3s['rank'] == 'Supersonic Legend')
+                        <img src="{{ asset('images/ranks/Supersonic_Legend_rank_icon.webp') }}" alt="">
                     @else
                         <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
                     @endif
@@ -344,6 +350,8 @@
                         <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
                     @elseif ($rank_hoops['rank'] == 'Platinum III')
                         <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_hoops['rank'] == 'Supersonic Legend')
+                        <img src="{{ asset('images/ranks/Supersonic_Legend_rank_icon.webp') }}" alt="">
                     @else
                         <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
                     @endif
@@ -390,6 +398,8 @@
                         <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
                     @elseif ($rank_rumble['rank'] == 'Platinum III')
                         <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_rumble['rank'] == 'Supersonic Legend')
+                        <img src="{{ asset('images/ranks/Supersonic_Legend_rank_icon.webp') }}" alt="">
                     @else
                         <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
                     @endif
@@ -436,6 +446,8 @@
                         <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
                     @elseif ($rank_dropshot['rank'] == 'Platinum III')
                         <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_dropshot['rank'] == 'Supersonic Legend')
+                        <img src="{{ asset('images/ranks/Supersonic_Legend_rank_icon.webp') }}" alt="">
                     @else
                         <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
                     @endif
@@ -482,6 +494,8 @@
                         <img src="{{ asset('images/ranks/Platinum2_rank_icon.webp') }}" alt="">
                     @elseif ($rank_snowday['rank'] == 'Platinum III')
                         <img src="{{ asset('images/ranks/Platinum3_rank_icon.webp') }}" alt="">
+                    @elseif ($rank_snowday['rank'] == 'Supersonic Legend')
+                        <img src="{{ asset('images/ranks/Supersonic_Legend_rank_icon.webp') }}" alt="">
                     @else
                         <img src="{{ asset('images/ranks/unranked.png') }}" alt="">
                     @endif
@@ -519,16 +533,16 @@
         </section>
 
 
-    <script>
-        const btn = document.getElementById('btn')
-        const loadingSVG = document.getElementById('loading-svg')
-        btn.addEventListener('click', (e) => {
-            loadingSVG.classList.remove('hidden')
-            @if (Session::has('data'))
-                loadingSVG.classList.add('hidden')
-            @endif
-        })
-    </script>
+        <script>
+            const btn = document.getElementById('btn')
+            const loadingSVG = document.getElementById('loading-svg')
+            btn.addEventListener('click', (e) => {
+                loadingSVG.classList.remove('hidden')
+                @if (Session::has('data'))
+                    loadingSVG.classList.add('hidden')
+                @endif
+            })
+        </script>
 </body>
 
 </html>
